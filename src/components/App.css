@@ -1,0 +1,9 @@
+.cartLogo {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.cartDiv{
+    display: flex;
+    flex-direction: row;
+}
