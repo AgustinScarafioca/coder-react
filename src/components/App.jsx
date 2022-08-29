@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
 import Navbar from './Navbar/Navbar';
-import ProdCards from './ProdCards/ProdCards';
+import ItemListContainer from './ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <>
     <Navbar></Navbar>
-    <ProdCards></ProdCards>
+    <ItemListContainer saludo = "Bienvenidos a mi pagina"/>
     </>
   );
 }
