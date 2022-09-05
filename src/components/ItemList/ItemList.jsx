@@ -7,7 +7,7 @@ const ItemList = ({data = []}) => {
 
 
     return (
-        data.map(product => <Item key={product.id} info= {product}/>)
+        data.map(product => <Item key={product.id} info={product}/>)
     );
 }
 
