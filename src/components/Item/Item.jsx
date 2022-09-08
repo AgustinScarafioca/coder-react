@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Item = ({info}) => {
     return (
@@ -7,6 +9,7 @@ const Item = ({info}) => {
             <div className="card-body">
                 <p className="card-title">${info.price}</p>
             </div>
+            <Link to={`/detalle/${info.id}`}><p className='text-warning'>Click aqui para mas informacion</p></Link>
         </div>
     );
 }
