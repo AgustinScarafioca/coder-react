@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ItemCounter from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
+
+    const [goCart, setGoCart] = useState(false);
+
+    function onAdd(){
+        setGoCart(true)
+    }
+
     return (
         <div className='m-5 text-center'>
             <div className="card mb-3">
@@ -11,7 +20,11 @@ const ItemDetail = ({data}) => {
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">Stock: {data.stock}</li>
-                    <li className="list-group-item">Precio: ${data.price}</li>
+                    <li className="list-group-item">Precio: ${data.price}</li>+
+                    {
+                        goCart ? <Link to="/cart">Ir al carrito</Link> : <ItemCounter initial={0} stock= {10} onAdd={onAdd}/>
+                    }
+
                 </ul>
             </div>
         </div>

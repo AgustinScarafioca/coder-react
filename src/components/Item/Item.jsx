@@ -9,6 +9,7 @@ const Item = ({info}) => {
             <div className="card-body">
                 <p className="card-title">${info.price}</p>
             </div>
+            <img src={info.img} alt="" />
             <Link to={`/detalle/${info.id}`}><p className='text-warning'>Click aqui para mas informacion</p></Link>
         </div>
     );

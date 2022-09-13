@@ -2,6 +2,8 @@ import React from "react";
 import CartForm from "../CartForm/CartForm"; 
 import {NavLink} from "react-router-dom";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
+import Contact from "../Contact/Contact";
+import AboutUs from "../AboutUs/AboutUs";
 
 
 const Navbar = () => {
@@ -15,10 +17,10 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <NavLink className="nav-link active lead" to="./">Home</NavLink>
-                        <NavLink className="nav-link lead" to={ItemListContainer}>Tienda</NavLink>
-                        <NavLink className="nav-link lead" to="./aboutUs">Sobre nosotros</NavLink>
-                        <NavLink className="nav-link lead" to="./contact">Contacto</NavLink>
+                        <NavLink className="nav-link lead" to="./">Tienda</NavLink>
+                        {/* <NavLink className="nav-link lead" to={ItemListContainer}>Tienda</NavLink> */}
+                        <NavLink className="nav-link lead" to="./aboutUs" element={<AboutUs/>}>Sobre nosotros</NavLink>
+                        <NavLink className="nav-link lead" to="./contact" element={<Contact/>}>Contacto</NavLink>
                     </div>
                 </div>
                 <div className="cartDiv">
