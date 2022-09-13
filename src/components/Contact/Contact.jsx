@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
         <>
-            <h1>Aca va el formulario para contactarnos</h1>
+            <h1 className='text-center'>Aca va el formulario para contactarnos</h1>
         </>
     );
 }
