@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Item = ({info}) => {
+    
+
     return (
         <div className="card text-white bg-primary mb-3 col d-flex justify-content-center" style={{maxWidth: '15rem', margin: "5px", padding: "2rem"}}>
             <div className="card-header">{info.name}</div>

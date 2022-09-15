@@ -1,9 +1,9 @@
 import React from "react";
 import CartForm from "../CartForm/CartForm"; 
 import {NavLink} from "react-router-dom";
-import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import Contact from "../Contact/Contact";
 import AboutUs from "../AboutUs/AboutUs";
+import CartWidget from "../CartWidget/CartWidget";
 
 
 const Navbar = () => {
@@ -18,14 +18,13 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <NavLink className="nav-link lead" to="./">Tienda</NavLink>
-                        {/* <NavLink className="nav-link lead" to={ItemListContainer}>Tienda</NavLink> */}
                         <NavLink className="nav-link lead" to="./aboutUs" element={<AboutUs/>}>Sobre nosotros</NavLink>
                         <NavLink className="nav-link lead" to="./contact" element={<Contact/>}>Contacto</NavLink>
                     </div>
                 </div>
                 <div className="cartDiv">
                     <CartForm contBuscar ="Productos"/>
-                    <img className="cartLogo" src="/img/Cart.svg" alt="" srcset="" />
+                    <CartWidget/>
                 </div>
             </div>
         </nav>
