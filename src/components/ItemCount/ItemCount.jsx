@@ -22,7 +22,6 @@ const Counter = ({stock, onAdd}) => {
     return (
         <div className='container text-center'>
             <div>
-                <h3>Contador</h3>
                 <p>Stock: {stock}</p>
                 <p>Cantidad: {count}</p>
             </div>
@@ -31,7 +30,7 @@ const Counter = ({stock, onAdd}) => {
                 <button className='btn' onClick={reset}>Reset</button>
                 <button className='btn btn-success' onClick={add}>+</button>
             </div>
-            <button className='btn' onClick={() => onAdd(count)}> Finalizar compra</button>
+            <button className='btn btn-success' onClick={() => onAdd(count)}> Finalizar compra</button>
         </div>
     );
 }

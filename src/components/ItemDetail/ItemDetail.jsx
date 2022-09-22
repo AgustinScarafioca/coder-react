@@ -23,9 +23,9 @@ const ItemDetail = ({data}) => {
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">Stock: {data.stock}</li>
-                    <li className="list-group-item">Precio: ${data.price}</li>+
+                    <li className="list-group-item">Precio: ${data.price}</li>
                     {
-                        goCart ? <Link to="/cart">Ir al carrito</Link> : <ItemCounter initial={0} stock= {10} onAdd={onAdd}/>
+                        goCart ? <Link to="/cart"><button className='btn btn-success'>Ir al carrito</button></Link> : <ItemCounter initial={0} stock= {10} onAdd={onAdd}/>
                     }
 
                 </ul>

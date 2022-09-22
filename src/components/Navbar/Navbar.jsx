@@ -18,6 +18,8 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <NavLink className="nav-link lead" to="./">Tienda</NavLink>
+{/*                     <NavLink className="nav-link lead" to="./categoria/comunes">Funkos comunes</NavLink>
+                        <NavLink className="nav-link lead" to="./categoria/especiales">Funkos especiales</NavLink> */}
                         <NavLink className="nav-link lead" to="./aboutUs" element={<AboutUs/>}>Sobre nosotros</NavLink>
                         <NavLink className="nav-link lead" to="./contact" element={<Contact/>}>Contacto</NavLink>
                     </div>

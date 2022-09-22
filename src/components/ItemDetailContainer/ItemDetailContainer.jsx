@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -9,10 +10,12 @@ const ItemDetailContainer = () => {
     const { detalleId } = useParams()
     
     useEffect(() => {
-        fetch("../json/productos.json")
-        .then ((res => res.json()))
-        .then(res => setData(res.find(detail => detail.id === parseInt(detalleId))))
-    },);
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'products', detalleId)
+        getDoc(queryDoc)
+        .then(res => setData({ id:res.id, ...res.data() }))
+    }, [detalleId]);
+
 
     return (
         <div>
