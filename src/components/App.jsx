@@ -8,7 +8,7 @@ import Cart from './Cart/Cart';
 import AboutUs from './AboutUs/AboutUs';
 import Contact from './Contact/Contact';
 import CartProvider from '../context/CartContext'
-
+import Footer from './Footer/footer';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
               <Route path='/aboutUs' element={<AboutUs/>}></Route>
               <Route path='/contact' element={<Contact/>}></Route>
             </Routes>
+          <Footer/>
         </CartProvider>
       </BrowserRouter> 
     </>

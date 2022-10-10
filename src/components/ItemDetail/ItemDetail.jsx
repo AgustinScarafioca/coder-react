@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useCartContext } from '../../context/CartContext';
 import ItemCounter from '../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
+import ItemDetailLink from '../ItemDetailLink/ItemDetailLink';
 
 const ItemDetail = ({data}) => {
 
@@ -25,7 +25,7 @@ const ItemDetail = ({data}) => {
                     <li className="list-group-item">Stock: {data.stock}</li>
                     <li className="list-group-item">Precio: ${data.price}</li>
                     {
-                        goCart ? <Link to="/cart"><button className='btn btn-success'>Ir al carrito</button></Link> : <ItemCounter initial={0} stock= {10} onAdd={onAdd}/>
+                        goCart ? <ItemDetailLink/> : <ItemCounter initial={0} stock= {10} onAdd={onAdd}/>
                     }
 
                 </ul>

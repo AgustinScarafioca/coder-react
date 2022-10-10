@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import React, { useState} from 'react';
 import { useCartContext } from '../../context/CartContext';
-import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 import ItemCart from '../ItemCart/ItemCart';
-import Swal from 'sweetalert2';
 
 
-const Cart = () => {
+
+
+const Checkout = () => {
 
     const {cart, totalPrice, clearCart} = useCartContext(); 
 
 
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [phone, setPhone] = useState()
-    const [address, setAddress] = useState()
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [address, setAddress] = useState('')
 
     const order = {
         buyer: {
@@ -36,7 +38,7 @@ const handleSubmit = ()=> {
             icon: 'success',
             title: 'Tu compra está siendo procesada',
             showConfirmButton: false,
-            timer: 3000
+            timer: 2500
             })
             const db = getFirestore();
             const orderCollection = collection(db, 'orders');
@@ -49,7 +51,7 @@ const handleSubmit = ()=> {
                 Email: ${order.buyer.email}
                 Teléfono: ${order.buyer.phone}
                 Dirección: ${order.buyer.address}
-                Items: ${order.quantity}
+                Items: ${totalPrice()}
                 Total: $${order.total}
                 ¡Muchas gracias por confiar en nosotros!`
                 ))
@@ -68,7 +70,7 @@ if (cart.length === 0) {
     return(
         <div className='text-center'>
             <p>No hay elementos en el carrito</p>
-            <Link className='btn btn-dark text-white rounded-pill' to='../'>Ir al inicio</Link>
+            <Link className='btn btn-dark text-white rounded-pill' to='./'>Ir al inicio</Link>
         </div>
     )
 }
@@ -129,6 +131,4 @@ if (cart.length === 0) {
     );
 }
 
-
-export default Cart;
-
+export default Checkout;

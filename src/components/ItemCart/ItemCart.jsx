@@ -11,7 +11,7 @@ const ItemCart = ({ product }) => {
                 <p className='m-0 p-3'>Cantidad: {product.quantity}</p>
                 <p className='m-0 p-3'>Precio: $ {product.price}</p>
                 <p className='m-0 p-3'>Subtotal: ${product.quantity * product.price}</p>
-                <button className='btn btn-danger text-center m-0 p-3' onClick={() => removeProduct(product.id)}>Eliminar</button>
+                <button className='btn btn-danger text-center m-0 p-3' onClick={() => removeProduct(product.id)}>Eliminar este producto</button>
             </div>
         </div>
     );
