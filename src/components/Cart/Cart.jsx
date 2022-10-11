@@ -28,13 +28,13 @@ const Cart = () => {
         total: totalPrice(),
 }
 
-
+// Funcion de carrito
 const handleSubmit = ()=> {
         if (name !== '' && email !== '' && !isNaN(phone) && address !== '') {
             Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Tu compra está siendo procesada',
+            title: 'Su compra está siendo procesada',
             showConfirmButton: false,
             timer: 3000
             })
@@ -57,18 +57,22 @@ const handleSubmit = ()=> {
                 clearCart()
                 )
         } else {
-            Swal.fire(
-            'Atención',
-            'Debe ingresar correctamente sus datos para finalizar la compra'
-            )
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Por favor complete sus datos correctamente',
+                showConfirmButton: false,
+                timer: 3000
+            })
     }
 }
 
 if (cart.length === 0) {
     return(
-        <div className='text-center'>
-            <p>No hay elementos en el carrito</p>
-            <Link className='btn btn-dark text-white rounded-pill' to='../'>Ir al inicio</Link>
+        <div className='text-center m-5 p-5'>
+            <h4 className=''>¡Atencion!</h4>
+            <p className='lead'>No hay elementos en el carrito</p>
+            <Link className='btn btn-dark text-white rounded-pill m-5' to='../'>Ir al inicio</Link>
         </div>
     )
 }
@@ -79,50 +83,71 @@ if (cart.length === 0) {
                 {
                 cart.map(product => <ItemCart key={product.id} product={product} />) 
                 }
-                <div className='text-center'>
-                    <p className='h3'>
+                <div className='text-center m-5 p-2'>
+                    <h3 className='p-3 blockquote'>
                     Total: $ {totalPrice()}
-                    </p>
+                    </h3>
                 </div>
             </div>
-            <h4>Para finalizar la compra complete sus datos</h4>
-            <form onSubmit={handleSubmit}>
-                <input 
+            <h4 className='p-5'>Para finalizar la compra por favor complete sus datos</h4>
+            <form className='form-group' onSubmit={handleSubmit}>
+                <label className='col-form-label col-form-label-lg mt-4 m-3'>
+                    Nombre
+                </label>
+                <input
+                    className='form-control form-control-lg m-3'
                     type="text" 
                     name='name'
                     placeholder='Nombre'
+                    required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
+                <label className='col-form-label col-form-label-lg mt-4 m-3'>
+                    Email
+                </label>
                 <input 
+                    className='form-control form-control-lg m-3'
                     type="text" 
                     name='email'
                     placeholder='Email'
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <input 
+                <label className='col-form-label col-form-label-lg mt-4 m-3'>
+                    Numero de telefono
+                </label>
+                <input
+                    className='form-control form-control-lg m-3'
                     type="text" 
                     name='number'
                     placeholder='Numero de telefono'
+                    required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                 />
-                <input 
+                <label className='col-form-label col-form-label-lg mt-4 m-3'>
+                    Direccion
+                </label>
+                <input
+                    className='form-control form-control-lg m-3'
                     type="text" 
                     name='direction'
                     placeholder='Direccion'
+                    required
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                 />
                 <button 
+                className='btn btn-success text-center m-3'
                 type='submit'
                 onClick={handleSubmit}
                 >
                     Finalizar compra
                 </button>
-                <button className='btn btn-danger' onClick={clearCart}>
-                    Vaciar carrito
+                <button className='btn btn-danger text-center m-3' onClick={clearCart}>
+                    Cancelar compra
                 </button>
             </form>  
         </>

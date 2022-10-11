@@ -39,7 +39,6 @@ const Contact = () => {
                     <div className="col text-center lead">
                         <h2 className="p-3 m-1">¡Contactese con nosotros!</h2>
                     </div>
-                    {/* Form */}
                     <div className="col text-center">
                     <form className="m-5" action>
                         <div className="p-3">
